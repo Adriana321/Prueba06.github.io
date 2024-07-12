@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerreras de la Roja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Guerreras de la Roja</h1>
+        <p>Una exploración de la selección femenina de fútbol chilena</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#Guerreras-de-la-Roja">Guerreras de la Roja</a></li>
+            <li><a href="#composicion-seleccion">¿Cómo se compone la selección femenina?</a></li>
+            <li><a href="#Datos-y-estadistica">Datos y Estadísticas</a></li>
+            <li><a href="#Perfiles-de-Jugadoras">Perfiles de Jugadoras</a></li>
+            <li><a href="#veronica-riquelme">Verónica Riquelme</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="Guerreras de la Roja">
+            <h2>Guerreras de la Roja</h2>
+            <img src="1716943720851-19d9c531-2994-453d-9655-8685ae460031.jpeg" alt="Guerreras de la Roja" style="width: 100%; height: auto;">
+            <p>Bienvenidos a "Guerreras de la Roja", una webstory que explora la trayectoria y los desafíos de la selección femenina de fútbol de Chile. Nuestra hipótesis central es que hay una falta de representación de las mejores jugadoras de los campeonatos chilenos en el equipo citado a los partidos amistosos de la selección femenina en los últimos 6 años.</p>
+            <p>La representación equitativa en la selección nacional es crucial para el desarrollo del fútbol femenino en Chile. Garantizar que las jugadoras más talentosas y destacadas de los campeonatos nacionales tengan la oportunidad de competir en el escenario internacional no solo fortalece el equipo, sino que también inspira a las futuras generaciones de futbolistas.</p>
+        </section>
+        <section id="composicion-seleccion">
+            <h2>¿Cómo se compone la selección femenina?</h2>
+            <p>Las Guerreras de la Roja en los Juegos Panamericanos 2023 demostraron su talento y determinación. Estas Guerreras de la Roja no solo representaron a nuestro país con orgullo, sino que también dejaron una marca imborrable en el torneo.</p>
+            <p>El corazón del equipo estuvo compuesto por:</p>
+            <ul>
+                <li><strong>Jugadoras veteranas:</strong>
+                    <ul>
+                        <li><strong>Tiane Endler:</strong> Capitana y guardiana del arco, reconocida mundialmente.</li>
+                        <li><strong>Karen Araya:</strong> Mediocampista experimentada, clave en la creación de oportunidades.</li>
+                        <li><strong>Yanara Aedo:</strong> Delantera veloz y hábil, amenaza constante para las defensas contrarias.</li>
+                    </ul>
+                </li>
+                <li><strong>Jóvenes promesas:</strong>
+                    <ul>
+                        <li><strong>Isidora Olave:</strong> Defensa joven con una gran capacidad de anticipación y madurez en el campo.</li>
+                        <li><strong>Sofia Hartard:</strong> Mediocampista precisa en sus pases y fundamental para conectar la defensa con el ataque.</li>
+                        <li><strong>Fernanda Pinilla:</strong> Delantera prometedora, destacada por su olfato goleador.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>La diversidad de edades entre las jugadoras fue una de las fortalezas del equipo. Esta mezcla permitió combinar la sabiduría y la experiencia de las jugadoras veteranas con la energía y la frescura de las más jóvenes.</p>
+            <p>Durante el torneo, las Guerreras de la Roja enfrentaron a equipos de alto nivel, mostrando su capacidad competitiva y su constante crecimiento. Cada partido fue una prueba de su esfuerzo y dedicación, inspirando a futuras generaciones de futbolistas.</p>
+            <p>La participación de la selección femenina en los Juegos Panamericanos 2023 destacó el avance del fútbol femenino chileno. Con una mezcla perfecta de experiencia y juventud, estas jugadoras continúan elevando el nivel del deporte y dejando una huella duradera en la historia del fútbol.</p>
+            <div id="chart"></div>
+        </section>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script>
+            var nombres = ["Michelle Olivares", "Fernanda Ramírez", "Yastin Jiménez", "Anais Álvarez", "Yessenia López", "Yanara Aedo", "María José Urrutia", "Isidora Olave", "Helen Galaz", "Fernanda Pinilla", "Karen Fuentes", "Franchesca Caniguán", "Daniela Zamora", "Christiane Endler", "Yenny Acuña", "Antonia Canales", "Karen Araya", "Camila Sáez"];
+            var edades = [22, 31, 23, 16, 33, 30, 30, 22, 33, 30, 19, 24, 33, 32, 27, 21, 33, 29];
+            var apariciones = [5, 5, 13, 2, 20, 25, 18, 3, 15, 12, 8, 9, 22, 27, 10, 7, 20, 18];
+            var equipos = ["Colo Colo", "Colo Colo", "Colo Colo", "Colo Colo", "Colo Colo", "Colo Colo", "Colo Colo", "Colo Colo", "Santiago Morning", "Universidad de Chile", "Universidad de Chile", "Universidad de Chile", "Universidad de Chile", "Olympique Lyon", "Sport Bahía", "Valencia", "Madrid CFF", "Madrid CFF"];
+            var colores = ["#636EFA", "#636EFA", "#636EFA", "#636EFA", "#636EFA", "#636EFA", "#636EFA", "#636EFA", "#EF553B", "#00CC96", "#00CC96", "#00CC96", "#00CC96", "#AB63FA", "#FFA15A", "#19D3F3", "#FF6692", "#FF6692"];
+        
+            var trace1 = {
+                x: apariciones,
+                y: edades,
+                mode: 'markers',
+                marker: {
+                    color: colores,
+                    size: 12
+                },
+                text: nombres.map((nombre, i) => nombre + " - Edad: " + edades[i] + " años - Equipo: " + equipos[i]),
+                type: 'scatter'
+            };
+        
+            var data = [trace1];
+        
+            var layout = {
+                title: 'Edad de las Jugadoras por Cantidad de Apariciones en la Selección',
+                xaxis: {
+                    title: 'Cantidad de Apariciones'
+                },
+                yaxis: {
+                    title: 'Edad'
+                }
+            };
+        
+            Plotly.newPlot('chart', data, layout);
+        </script>
+        <section id="Datos-y-estadistica">
+            <h2>Datos y Estadísticas</h2>
+            <p>Analizaremos la representación de las mejores jugadoras del campeonato chileno en los partidos amistosos de la selección femenina de Chile durante los últimos 6 años. Utilizamos dos conjuntos de datos: uno que muestra las apariciones en partidos amistosos y otro que muestra las goleadoras del campeonato chileno. Nuestro objetivo es evidenciar la desconexión entre el rendimiento en los campeonatos locales y la selección para el equipo nacional, respaldando nuestra hipótesis.</p>
+            <div id="apariciones_chart"></div>
+            <div id="goles_chart"></div>
+            <p>Los datos muestran una clara desconexión entre el rendimiento en los campeonatos nacionales y la selección para partidos amistosos. Jugadoras con altas estadísticas de goles, como María José Urrutia y Yenny Acuña, tienen relativamente pocas apariciones en amistosos, mientras que otras goleadoras como Verónica Riquelme no han sido convocadas consistentemente. Esto respalda nuestra hipótesis de que hay una falta de representación de las mejores jugadoras de los campeonatos chilenos en el equipo citado a los partidos amistosos de la selección femenina en los últimos 6 años.</p>
+        </section>
+    
+        <section id="Perfiles-de-Jugadoras">
+            <h2>Perfiles de Jugadoras</h2>
+            <p>En esta sección, destacamos los perfiles de las jugadoras más importantes tanto en la selección femenina de Chile como en los campeonatos nacionales. Nuestro objetivo es resaltar la disparidad entre las apariciones en partidos amistosos y el rendimiento en los campeonatos nacionales.</p>
+            <div id="perfiles_chart"></div>
+            <div id="apariciones_perfiles_chart"></div>
+            <p>El análisis de los perfiles de estas jugadoras revela una clara disparidad entre el rendimiento en los campeonatos nacionales y las apariciones en partidos amistosos de la selección nacional. Jugadoras como María José Urrutia y Yenny Acuña, que tienen un rendimiento sobresaliente en los campeonatos nacionales, no están siendo adecuadamente representadas en la selección nacional. Esta desconexión resalta la necesidad de un sistema de selección más equitativo y basado en méritos.</p>
+        </section>
+    
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script>
+            function processAparicionesData(results) {
+                const data = results.data.slice(1); // Excluir la fila de encabezado
+                const temporadas = results.data[0].slice(1); // Excluir la primera columna
+                return data.map(row => {
+                    return {
+                        nombre: row[0],
+                        temporadas: temporadas,
+                        valores: row.slice(1).map(Number) // Convertir a números
+                    };
+                });
+            }
+    
+            function processGolesData(results) {
+                const data = results.data.slice(1);
+                const temporadas = results.data[0].slice(1); // Excluir la primera columna
+                return data.map(row => {
+                    return {
+                        nombre: row[0],
+                        temporadas: temporadas,
+                        valores: row.slice(1).map(Number) // Convertir a números
+                    };
+                });
+            }
+    
+            function createAparicionesTraces(data) {
+                return data.map(player => {
+                    return {
+                        x: player.temporadas,
+                        y: player.valores,
+                        mode: 'lines+markers',
+                        name: player.nombre // Solo el nombre de la jugadora
+                    };
+                });
+            }
+    
+            function createGolesTraces(data) {
+                return data.map(player => {
+                    return {
+                        x: player.temporadas,
+                        y: player.valores,
+                        mode: 'lines+markers',
+                        name: player.nombre // Solo el nombre de la jugadora
+                    };
+                });
+            }
+    
+            function plotAparicionesChart(aparicionesData) {
+                let traces = createAparicionesTraces(aparicionesData);
+    
+                let layout = {
+                    title: 'Apariciones de Jugadoras Chilenas en Amistosos por Temporada',
+                    xaxis: {
+                        title: 'Temporada',
+                        type: 'category',
+                        categoryorder: 'category ascending'
+                    },
+                    yaxis: {
+                        title: 'Número de Apariciones'
+                    }
+                };
+    
+                Plotly.newPlot('apariciones_chart', traces, layout);
+            }
+    
+            function plotGolesChart(golesData) {
+                let traces = createGolesTraces(golesData);
+    
+                let layout = {
+                    title: 'Goles de Jugadoras Chilenas en Campeonatos por Temporada',
+                    xaxis: {
+                        title: 'Temporada',
+                        type: 'category',
+                        categoryorder: 'category ascending'
+                    },
+                    yaxis: {
+                        title: 'Número de Goles'
+                    }
+                };
+    
+                Plotly.newPlot('goles_chart', traces, layout);
+            }
+    
+            function plotPerfilesChart(golesData) {
+                let traces = golesData.map(player => {
+                    return {
+                        x: player.temporadas,
+                        y: player.valores,
+                        mode: 'markers+lines',
+                        name: player.nombre, // Solo el nombre de la jugadora
+                        hovertemplate: `<b>${player.nombre}</b><br>Goles: %{y}<extra></extra>`
+                    };
+                });
+    
+                let layout = {
+                    title: 'Mejores Goleadoras Chilenas en Campeonatos por Temporada',
+                    xaxis: {
+                        title: 'Año',
+                        type: 'category',
+                        categoryorder: 'category ascending'
+                    },
+                    yaxis: {
+                        title: 'Número de Goles'
+                    },
+                    hovermode: 'closest'
+                };
+    
+                Plotly.newPlot('perfiles_chart', traces, layout);
+            }
+    
+            function plotPerfilesAparicionesChart(apparicionesData) {
+                let traces = apparicionesData.map(player => {
+                    return {
+                        x: player.temporadas,
+                        y: player.valores,
+                        mode: 'markers+lines',
+                        name: player.nombre, // Solo el nombre de la jugadora
+                        hovertemplate: `<b>${player.nombre}</b><br>Apariciones: %{y}<extra></extra>`
+                    };
+                });
+    
+                let layout = {
+                    title: 'Mayor Números de Apariciones de Jugadoras Chilenas en Amistosos por Temporada',
+                    xaxis: {
+                        title: 'Año',
+                        type: 'category',
+                        categoryorder: 'category ascending'
+                    },
+                    yaxis: {
+                        title: 'Número de Apariciones'
+                    },
+                    hovermode: 'closest'
+                };
+    
+                Plotly.newPlot('apariciones_perfiles_chart', traces, layout);
+            }
+    
+            // Cargar datos de apariciones
+            Papa.parse('Ap.csv', {
+                download: true,
+                complete: function(resultsApariciones) {
+                    let aparicionesData = processAparicionesData(resultsApariciones);
+                    plotAparicionesChart(aparicionesData);
+                }
+            });
+    
+            // Cargar datos de goles
+            Papa.parse('Gol.csv', {
+                download: true,
+                complete: function(resultsGoles) {
+                    let golesData = processGolesData(resultsGoles);
+                    plotGolesChart(golesData);
+                }
+            });
+    
+            // Cargar datos de perfiles de jugadoras (goles)
+            Papa.parse('Gol1.csv', {
+                download: true,
+                complete: function(resultsPerfiles) {
+                    let perfilesData = processGolesData(resultsPerfiles);
+                    plotPerfilesChart(perfilesData);
+                }
+            });
+    
+            // Cargar datos de perfiles de jugadoras (apariciones)
+            Papa.parse('Ap1.csv', {
+                download: true,
+                complete: function(resultsAparicionesPerfiles) {
+                    let perfilesAparicionesData = processAparicionesData(resultsAparicionesPerfiles);
+                    plotPerfilesAparicionesChart(perfilesAparicionesData);
+                }
+            });
+        </script>
+        <section id="veronica-riquelme">
+            <h2>Verónica Riquelme</h2>
+            <img src="WhatsApp Image 2024-07-11 at 22.18.45.jpeg" alt="Verónica Riquelme" style="width: 100%; height: auto; margin-bottom: 20px;">
+            <p>Verónica Riquelme es una de las delanteras más prolíficas del fútbol chileno, destacándose en los campeonatos nacionales con una impresionante cantidad de goles. Sin embargo, a pesar de su evidente talento y capacidad goleadora, Riquelme no ha sido convocada para los partidos amistosos de la selección nacional, lo que plantea una pregunta importante: ¿Por qué una jugadora tan destacada no tiene apariciones en estos encuentros preparatorios?</p>
+            <ul>
+                <li><strong>Carrera:</strong> Verónica Riquelme ha construido una carrera impresionante en el fútbol femenino chileno. Su habilidad para encontrar el fondo de la red y su consistencia en el campo la han convertido en una figura esencial para su club. En la última temporada, Riquelme anotó 89 goles, consolidándose como una de las máximas goleadoras del campeonato chileno.</li>
+                <li><strong>Ausencia en Amistosos:</strong> A pesar de su éxito a nivel de clubes, Riquelme no figura en las convocatorias para los partidos amistosos de la selección nacional. Posibles razones incluyen:
+                    <ul>
+                        <li>Estrategia del Cuerpo Técnico: Es posible que el cuerpo técnico prefiera evaluar a otras jugadoras en los amistosos, reservando a Riquelme para los partidos oficiales. Esta estrategia puede estar basada en la necesidad de probar diferentes combinaciones de jugadoras y no sobrecargar a las titulares.</li>
+                        <li>Compatibilidad con el Sistema de Juego: Otra posible explicación es que, aunque Riquelme sea una excelente goleadora a nivel de clubes, su estilo de juego puede no encajar perfectamente con el sistema táctico que el entrenador de la selección busca implementar. Los amistosos podrían ser utilizados para encontrar jugadoras que se adapten mejor a esta táctica específica.</li>
+                        <li>Factores Externos: También hay factores externos que podrían influir en su ausencia, como lesiones, compromisos personales o decisiones administrativas dentro de la federación.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Impacto en la Selección: La falta de apariciones de Riquelme en los amistosos puede tener un impacto significativo en la dinámica del equipo. Su experiencia y habilidad podrían aportar mucho en estos encuentros, ofreciendo oportunidades para ajustar tácticas y fortalecer la cohesión del equipo. Además, su ausencia podría estar privando a la selección de una de sus armas ofensivas más efectivas.</p>
+            <p>La historia de Verónica Riquelme subraya una paradoja en la gestión del talento dentro de la selección femenina chilena. Aunque su capacidad goleadora está comprobada, su falta de participación en los amistosos plantea preguntas sobre las estrategias de selección y preparación del equipo. Esta situación invita a reflexionar sobre cómo se toman las decisiones de convocatoria y la importancia de aprovechar al máximo el talento disponible para enfrentar desafíos futuros.</p>
+        </section>
+        <section id="conclusion">
+            <h2>Conclusión</h2>
+            <p>Nuestra investigación y análisis de datos han revelado una significativa falta de representación de las mejores jugadoras de los campeonatos chilenos en el equipo citado a los partidos amistosos de la selección femenina en los últimos 6 años. Jugadoras como María José Urrutia y Yenny Acuña, a pesar de su destacado rendimiento en los campeonatos nacionales, han tenido pocas oportunidades de representar a Chile en amistosos. Otras, como Verónica Riquelme, no han sido convocadas consistentemente, lo que subraya una desconexión entre la gestión de la selección nacional y el fútbol local.</p>
+            <p>Para fortalecer el fútbol femenino en Chile, es crucial cerrar la brecha entre el talento local y la selección nacional. Reconocer y valorar adecuadamente el desempeño de las jugadoras en los campeonatos nacionales no solo fortalecerá el equipo nacional, sino que también promoverá el crecimiento del deporte a nivel nacional. Establecer criterios de selección claros y justos, junto con un apoyo institucional robusto, puede asegurar una representación más equitativa y basada en méritos en la selección femenina de Chile.</p>
+            <img src="WhatsApp Image 2024-07-11 at 23.48.18.jpeg" alt="Primera selección de fútbol femenino chileno, en el Sudamericano Brasil 1991" style="width: 100%; height: auto; margin-top: 20px;">
+    <p style="text-align: center; font-style: italic;">Primera selección de fútbol femenino chileno, en el Sudamericano Brasil 1991.</p>
+        </section>    
+    </main>
+    <div id="futbol-container">
+        <img src="futbol.png" id="futbol" alt="Pelota de fútbol">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

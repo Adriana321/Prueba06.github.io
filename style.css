@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #d32f2f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #0033a0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+nav {
+    background-color: #0033a0;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    background: #ffffff;
+}
+
+section {
+    margin: 20px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #d32f2f;
+}
+
+h2 {
+    color: #d32f2f;
+    border-bottom: 2px solid #0033a0;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+a {
+    color: #0033a0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#chart {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #0033a0;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 5px solid #d32f2f;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+#quienes-somos img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* Centro de la imagen y espacio inferior */
+}
+#futbol-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000; /* Asegura que la pelota esté siempre encima del contenido */
+}
+
+#futbol {
+    width: 100%;
+    height: auto;
+    animation: bounceFootball 2s infinite; /* Duración de 2 segundos para el rebote */
+    mix-blend-mode: multiply; /* Intenta eliminar el fondo blanco */
+}
+
+@keyframes bounceFootball {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
