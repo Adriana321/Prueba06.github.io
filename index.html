@@ -107,25 +107,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
         <script>
             function processAparicionesData(results) {
-                const data = results.data.slice(1); // Excluir la fila de encabezado
-                const temporadas = results.data[0].slice(1); // Excluir la primera columna
+                const data = results.data.slice(1); 
+                const temporadas = results.data[0].slice(1); 
                 return data.map(row => {
                     return {
                         nombre: row[0],
                         temporadas: temporadas,
-                        valores: row.slice(1).map(Number) // Convertir a números
+                        valores: row.slice(1).map(Number) 
                     };
                 });
             }
     
             function processGolesData(results) {
                 const data = results.data.slice(1);
-                const temporadas = results.data[0].slice(1); // Excluir la primera columna
+                const temporadas = results.data[0].slice(1); 
                 return data.map(row => {
                     return {
                         nombre: row[0],
                         temporadas: temporadas,
-                        valores: row.slice(1).map(Number) // Convertir a números
+                        valores: row.slice(1).map(Number) 
                     };
                 });
             }
@@ -136,7 +136,7 @@
                         x: player.temporadas,
                         y: player.valores,
                         mode: 'lines+markers',
-                        name: player.nombre // Solo el nombre de la jugadora
+                        name: player.nombre 
                     };
                 });
             }
@@ -147,7 +147,7 @@
                         x: player.temporadas,
                         y: player.valores,
                         mode: 'lines+markers',
-                        name: player.nombre // Solo el nombre de la jugadora
+                        name: player.nombre 
                     };
                 });
             }
@@ -194,7 +194,7 @@
                         x: player.temporadas,
                         y: player.valores,
                         mode: 'markers+lines',
-                        name: player.nombre, // Solo el nombre de la jugadora
+                        name: player.nombre, 
                         hovertemplate: `<b>${player.nombre}</b><br>Goles: %{y}<extra></extra>`
                     };
                 });
@@ -221,7 +221,7 @@
                         x: player.temporadas,
                         y: player.valores,
                         mode: 'markers+lines',
-                        name: player.nombre, // Solo el nombre de la jugadora
+                        name: player.nombre, 
                         hovertemplate: `<b>${player.nombre}</b><br>Apariciones: %{y}<extra></extra>`
                     };
                 });
@@ -242,7 +242,7 @@
                 Plotly.newPlot('apariciones_perfiles_chart', traces, layout);
             }
     
-            // Cargar datos de apariciones
+            
             Papa.parse('Ap.csv', {
                 download: true,
                 complete: function(resultsApariciones) {
@@ -251,7 +251,7 @@
                 }
             });
     
-            // Cargar datos de goles
+           
             Papa.parse('Gol.csv', {
                 download: true,
                 complete: function(resultsGoles) {
@@ -260,7 +260,7 @@
                 }
             });
     
-            // Cargar datos de perfiles de jugadoras (goles)
+            
             Papa.parse('Gol1.csv', {
                 download: true,
                 complete: function(resultsPerfiles) {
@@ -269,7 +269,7 @@
                 }
             });
     
-            // Cargar datos de perfiles de jugadoras (apariciones)
+            
             Papa.parse('Ap1.csv', {
                 download: true,
                 complete: function(resultsAparicionesPerfiles) {
