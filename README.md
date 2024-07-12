@@ -2,6 +2,8 @@
 
 El proyecto "Guerreras de la Roja" se centra en analizar la representación de las mejores jugadoras de los campeonatos nacionales en la selección femenina de fútbol de Chile. A través de un análisis detallado de datos y estadísticas, buscamos evidenciar una desconexión significativa entre el rendimiento en las ligas locales y las convocatorias para partidos amistosos internacionales.
 
+Link página: https://adriana321.github.io/Prueba06.github.io/
+
 Hipótesis y Preguntas Iniciales
 
 Hipótesis Inicial:
